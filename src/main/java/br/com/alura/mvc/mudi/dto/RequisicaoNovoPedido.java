@@ -6,5 +6,5 @@ public class RequisicaoNovoPedido {
 	urlProduto
 	urlImagen
 	descricao
-
+//
 }
