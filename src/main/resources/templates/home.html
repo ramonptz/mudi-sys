@@ -23,13 +23,13 @@
 			
 			
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page" href="">Todos</a>
+					<a class="nav-link active" aria-current="page" href="/home">Todos</a>
 					<a class="nav-link"  href="">Aguardando</a>
 					<a class="nav-link" href="">Aprovado</a>
 					<a class="nav-link" href="">Entregue</a>
 					<a class="nav-link disabled">Disabled</a>
 				</div>
-				<a href="pedido/formulario1"><button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Novo</button></a>
+				<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Novo</button></a>
 			</nav>
 		
 			<div class="card" th:each="pedido : ${pedidos}">
