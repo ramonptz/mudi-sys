@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid mb-0">
+			<div class="container">
+				<h1 class="display-4">Novo Pedidos</h1>
+			</div>
+		</div>
+		<form action="pedido/novo" method="POST ">
+			<div>
+				<label>Produto</label>
+				<input name="nomeproduto" placeholder="insira o nome do produto"/>
+				<small>Informe o nome do produto</small>
+			</div>
+			<div>
+				<label>URL</label>
+				<input name="urlProduto" placeholder="insira a URL do produto aqui"/>
+				<small>Procure nos sites o produto que deseja, copie o link e insira aqui</small>
+			</div>
+			<div>
+				<label>Imagem do produto</label>
+				<input name="urlImagen" placeholder="insira a URL da imagem do produto"/>
+				<small>Procure nos sites a foto do produto que deseja, copie o link e insira aqui</small>
+			</div>
+			<div>
+				<label>Descrição</label>
+				<textarea  name="descricao" placeholder="Adicione detalhes importates para ajudar o comprador"></textarea>
+			</div>
+			<button type="submit">Cadastrar</button>
+		</form>
+	</div>
+</body>
+</html>
