@@ -1,46 +1,85 @@
 <html>
-	<head>
-		<meta charset="UTF-8"/>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	</head>
-	
-	<body>
-		<div class="container">
-			<div class="card" th:each="pedido : ${pedidos}">
-				<div class="card-header" th:text="${pedido.nomeProduto}">Nome do produto</div>
-				<div class="card-body">
-				
-					<div class="row">
-						<div class="col-12 col-sm-8 mb-3" >
-							<div class="row">
-								<div class="col-md-5">Valor:<span th:text="${pedido.valorNegociado}">200,00</span></div>
-								<div class="col-md-7">Data de produtos:<span th:text="${pedido.dataEntrega}">11/05/2022</span></div>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid mb-0">
+			<div class="container">
+				<h1 class="display-4">Meus Pedidos</h1>
+			</div>
+		</div>
+
+
+
+
+		<nav class="navbar navbar-expand navbar-light bg-light">
+
+			<div class="container-fluid">
+
+
+
+				<div class="navbar-nav">
+					<a class="nav-link active" aria-current="page" href="/home">Todos</a>
+					<a class="nav-link" href="">Aguardando</a> <a class="nav-link"
+						href="">Aprovado</a> <a class="nav-link" href="">Entregue</a> <a
+						class="nav-link disabled">Disabled</a>
+				</div>
+				<a href="/pedido/formulario"><button
+						class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Novo</button></a>
+		</nav>
+
+		<div class="card  mb-3" th:each="pedido : ${pedidos}">
+			<div class="card-header" th:text="${pedido.nomeProduto}">Nome
+				do produto</div>
+			<div class="card-body">
+
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="row">
+							<div class="col-md-5">
+								Valor:<span th:text="${pedido.valorNegociado}">200,00</span>
 							</div>
-							
-							<div>Produto</div>
-							
-							<div><input class="form-control" th:value="${pedido.urlProduto}" value="url do produto"/></div>
-							
-							<div>Descrição</div>
-							
-							<div>
-								<textarea class="form-control" th:text="${pedido.descricao}">descrição do pedido</textarea>
+							<div class="col-md-7">
+								Data de produtos:<span th:text="${pedido.dataEntrega}">11/05/2022</span>
 							</div>
 						</div>
-					
-						
-						<div class="col-12 col-sm-4">
-							<div>
-								<img class="img-thumbnail" th:src="${pedido.urlImagem}" src=""/>
-								 <!-- <img src="https://m.media-amazon.com/images/I/71CxIDOIZeL._AC_SL1500_.jpg"/> -->
-							</div>
-						</div>	
-					</div>
-				</div>							
-			</div>
-		</div>	
-		
 
-	</body>
+						<div>Produto</div>
+
+						<div>
+							<input class="form-control" th:value="${pedido.urlProduto}"
+								value="url do produto" />
+						</div>
+
+						<div>Descrição</div>
+
+						<div>
+							<textarea class="form-control" th:text="${pedido.descricao}">descrição do pedido</textarea>
+						</div>
+					</div>
+
+
+					<div class="col-12 col-sm-4">
+						<div>
+							<img class="img-thumbnail" th:src="${pedido.urlImagem}" src="" />
+							<!-- <img src="https://m.media-amazon.com/images/I/71CxIDOIZeL._AC_SL1500_.jpg"/> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </html>
