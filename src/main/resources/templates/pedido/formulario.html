@@ -16,30 +16,33 @@
 			</div>
 		</div>
 
-		<form action="/pedido/novo" method="POST">
-		<form action="/home" method="POST">
+		<div class="card mt-3">
+			<form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST">
 
-			<div>
-				<label>Produto</label>
-				<input name="nomeproduto" placeholder="insira o nome do produto"/>
-				<small>Informe o nome do produto</small>
-			</div>
-			<div>
-				<label>URL</label>
-				<input name="urlProduto" placeholder="insira a URL do produto aqui"/>
-				<small>Procure nos sites o produto que deseja, copie o link e insira aqui</small>
-			</div>
-			<div>
-				<label>Imagem do produto</label>
-				<input name="urlImagen" placeholder="insira a URL da imagem do produto"/>
-				<small>Procure nos sites a foto do produto que deseja, copie o link e insira aqui</small>
-			</div>
-			<div>
-				<label>Descrição</label>
-				<textarea  name="descricao" placeholder="Adicione detalhes importates para ajudar o comprador"></textarea>
-			</div>
-			<button type="submit">Cadastrar</button>
-		</form>
+				<div class="form-group">
+					<label>Produto</label> <input name="nomeproduto"
+						class="form-control" placeholder="insira o nome do produto" /> <small>Informe
+						o nome do produto</small>
+				</div>
+				<div class="form-group">
+					<label>URL</label> <input name="urlProduto" class="form-control"
+						placeholder="insira a URL do produto aqui" /> <small>Procure
+						nos sites o produto que deseja, copie o link e insira aqui</small>
+				</div>
+				<div class="form-group">
+					<label>Imagem do produto</label> <input name="urlImagen"
+						class="form-control"
+						placeholder="insira a URL da imagem do produto" /> <small>Procure
+						nos sites a foto do produto que deseja, copie o link e insira aqui</small>
+				</div>
+				<div class="form-group">
+					<label>Descrição</label>
+					<textarea name="descricao" class="form-control"
+						placeholder="Adicione detalhes importates para ajudar o comprador"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
