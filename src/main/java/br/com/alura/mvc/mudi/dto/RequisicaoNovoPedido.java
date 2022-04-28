@@ -2,9 +2,9 @@ package br.com.alura.mvc.mudi.dto;
 
 public class RequisicaoNovoPedido {
 	
-	private nomeproduto
-	urlProduto
-	urlImagen
-	descricao
-//
+	private String nomeproduto;
+	private String urlProduto;
+	private String urlImagen;
+	private String descricao;
+
 }
