@@ -8,20 +8,21 @@ import br.com.alura.mvc.mudi.model.Pedido;
 public class RequisicaoNovoPedido {
 	
 	@NotBlank
-	private String nomeproduto;
+	private String nomeProduto;
 	
 	@NotBlank
 	private String urlProduto;
 	
 	@NotBlank
 	private String urlImagen;
+	
 	private String descricao;
 	
-	public String getNomeproduto() {
-		return nomeproduto;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
-	public void setNomeproduto(String nomeproduto) {
-		this.nomeproduto = nomeproduto;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 	public String getUrlProduto() {
 		return urlProduto;
@@ -43,7 +44,7 @@ public class RequisicaoNovoPedido {
 	}
 	public Pedido toPedido() {
 		Pedido pedido = new Pedido();
-		pedido.setNomeProduto(nomeproduto);
+		pedido.setNomeProduto(nomeProduto);
 		pedido.setUrlImagem(urlImagen);
 		pedido.setDescricao(descricao);
 		pedido.setUrlProduto(urlProduto);
