@@ -14,7 +14,7 @@ public class RequisicaoNovoPedido {
 	private String urlProduto;
 	
 	@NotBlank
-	private String urlImagen;
+	private String urlImagem;
 	
 	private String descricao;
 	
@@ -30,11 +30,12 @@ public class RequisicaoNovoPedido {
 	public void setUrlProduto(String urlProduto) {
 		this.urlProduto = urlProduto;
 	}
-	public String getUrlImagen() {
-		return urlImagen;
+	
+	public String getUrlImagem() {
+		return urlImagem;
 	}
-	public void setUrlImagen(String urlImagen) {
-		this.urlImagen = urlImagen;
+	public void setUrlImagem(String urlImagem) {
+		this.urlImagem = urlImagem;
 	}
 	public String getDescricao() {
 		return descricao;
@@ -45,7 +46,7 @@ public class RequisicaoNovoPedido {
 	public Pedido toPedido() {
 		Pedido pedido = new Pedido();
 		pedido.setNomeProduto(nomeProduto);
-		pedido.setUrlImagem(urlImagen);
+		pedido.setUrlImagem(urlImagem);
 		pedido.setDescricao(descricao);
 		pedido.setUrlProduto(urlProduto);
 		return pedido;

@@ -17,23 +17,32 @@
 		</div>
 
 		<div class="card mt-3">
-			<form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST">
+			<form th:object="${requisicaoNovoPedido}" class="card-body"
+				action="/pedido/novo" method="POST">
 
 				<div class="form-group">
-					<label>Produto</label> <input th:field="*{nomeProduto}"
-						class="form-control" placeholder="insira o nome do produto" /> <small>Informe
+					<label class=>Produto</label> <input th:errorclass="is-invalid"
+						th:field="*{nomeProduto}" class="form-control"
+						placeholder="insira o nome do produto" /> <small>Informe
 						o nome do produto</small>
+					<div class="invalid-feedback" th:errors="*{nomeProduto}">Errors
+						do nome do produto</div>
+
 				</div>
 				<div class="form-group">
-					<label>URL</label> <input th:field="*{urlProduto}" class="form-control"
+					<label>URL</label> <input th:field="*{urlProduto}"
+						th:errorclass="is-invalid" class="form-control"
 						placeholder="insira a URL do produto aqui" /> <small>Procure
 						nos sites o produto que deseja, copie o link e insira aqui</small>
+					<div class="invalid-feedback" th:errors="*{urlProduto}">Errors
+						na url do produto</div>
 				</div>
 				<div class="form-group">
-					<label>Imagem do produto</label> <input th:field="*{urlImagen}"
-						class="form-control"
-						placeholder="insira a URL da imagem do produto" /> <small>Procure
-						nos sites a foto do produto que deseja, copie o link e insira aqui</small>
+					<label>Imagem do produto</label> <input th:field="*{urlImagem}"
+						th:errorclass="is-invalid" class="form-control"
+						placeholder="insira a URL da imagem do produto" /> 
+						<small>Procure nos sites a foto do produto que deseja, copie o link e insira aqui</small>
+					<div class="invalid-feedback" th:errors="*{urlImagem}">Errors da URL da imagem</div>
 				</div>
 				<div class="form-group">
 					<label>Descrição</label>
