@@ -1,20 +1,29 @@
 package br.com.alura.mvc.mudi.dto;
 
+
+import javax.validation.constraints.NotBlank;
+
 import br.com.alura.mvc.mudi.model.Pedido;
+import br.com.alura.mvc.mudi.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
 	
-
-	private String nomeproduto;
+	@NotBlank
+	private String nomeProduto;
+	
+	@NotBlank
 	private String urlProduto;
-	private String urlImagen;
+	
+	@NotBlank
+	private String urlImagem;
+	
 	private String descricao;
 	
-	public String getNomeproduto() {
-		return nomeproduto;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
-	public void setNomeproduto(String nomeproduto) {
-		this.nomeproduto = nomeproduto;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 	public String getUrlProduto() {
 		return urlProduto;
@@ -22,11 +31,12 @@ public class RequisicaoNovoPedido {
 	public void setUrlProduto(String urlProduto) {
 		this.urlProduto = urlProduto;
 	}
-	public String getUrlImagen() {
-		return urlImagen;
+	
+	public String getUrlImagem() {
+		return urlImagem;
 	}
-	public void setUrlImagen(String urlImagen) {
-		this.urlImagen = urlImagen;
+	public void setUrlImagem(String urlImagem) {
+		this.urlImagem = urlImagem;
 	}
 	public String getDescricao() {
 		return descricao;
@@ -35,11 +45,12 @@ public class RequisicaoNovoPedido {
 		this.descricao = descricao;
 	}
 	public Pedido toPedido() {
-		br.com.alura.mvc.mudi.model.Pedido pedido = new Pedido();
-		pedido.setNomeProduto(nomeproduto);
-		pedido.setUrlImagem(urlImagen);
+		Pedido pedido = new Pedido();
+		pedido.setNomeProduto(nomeProduto);
+		pedido.setUrlImagem(urlImagem);
 		pedido.setDescricao(descricao);
 		pedido.setUrlProduto(urlProduto);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 
