@@ -16,13 +16,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.authorizeRequests()
+		http.authorizeRequests()/* .antMatchers("/", "formulario").permitAll() oque for igual ao url vai ser permitido para todos verem */
 				.anyRequest().authenticated()
 				.and()
 				.formLogin(form -> form
 				.loginPage("/login")
 				.permitAll()
-				);
+				)
+				.logout(logout -> logout.logoutUrl("/logout"));
 		}
 		
 		@Bean
