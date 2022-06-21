@@ -24,14 +24,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()/* .antMatchers("/", "formulario").permitAll() oque for igual ao url vai ser permitido para todos verem */
+		http.authorizeRequests().antMatchers("/").permitAll()/* .antMatchers("/", "formulario").permitAll() oque for igual ao url vai ser permitido para todos verem */
 				.anyRequest().authenticated()
 				.and()
 				.formLogin(form -> form
-				.loginPage("/login").defaultSuccessUrl("/", true)
+				.loginPage("/login").defaultSuccessUrl("/usuario/pedido", true)
 				.permitAll()
 				)
-				.logout(logout -> logout.logoutUrl("/logout"))
+				.logout(logout -> logout.logoutUrl("/logout")
+				.logoutSuccessUrl("/"))				
 				.csrf().disable();
 		}
 		

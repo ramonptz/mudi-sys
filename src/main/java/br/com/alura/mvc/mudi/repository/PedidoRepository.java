@@ -2,6 +2,7 @@ package br.com.alura.mvc.mudi.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -20,7 +21,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long>{
 	
 	public List<Pedido> findAll();
 
-	public List<Pedido> findByStatus(StatusPedido status);
+	public List<Pedido> findByStatus(StatusPedido status, Pageable sort);
 	
 	// JPQL
 	@Query("select p from Pedido p join p.user u where  u.username= :username") 
@@ -28,7 +29,9 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long>{
 	// select * from pedido inner join users on (pedido.user_username = users.username) where users.username= 'joao'; // sql convertido
 	public List<Pedido> findAllByUsuario(@Param("username") String username);
 
-	
+	@Query
+	("select p from Pedido p join p.user u where u.username = :username and p.status = :status")
+	List<Pedido> findByStatusEUsuario(@Param ("status")StatusPedido status, @Param("username") String username);
 	
 	/* antigo pedido com springdata
 	 * public List<Pedido> recuperaTodosOsPedidos(){ Query query =
